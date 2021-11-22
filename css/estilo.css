@@ -1,0 +1,269 @@
+/* propiedades y valores que modifiquen al sitio en general (bg color para el body, familia tipografica)
+-----------------------------------------------------------
+@media mobile {}
+---------------------------------------------------------
+@media desktop {}
+
+ */
+
+
+.gridContainer{
+	display: grid; /* propiedad que habilita trabajar las demas prop de grid */ 
+	grid-template-columns:repeat(10, 1fr); /* prop que le da el valor del ancho de las columnas */
+	grid-template-rows: 100px 200px; /* prop que le da el valor de alto a las filas */
+}
+
+.gridContainerPadre{
+	display: grid;
+	grid-template-areas: 
+	"header header header header"
+	"main main main main"
+	"footer footer footer footer";
+	grid-template-rows: 100px 1fr 100px;
+	grid-template-columns: 25% 25% 25% 25%; /* repeat(4, 25%)*/
+}
+header.header{
+	grid-area: header;
+}
+main {
+	grid-area: main;
+}
+footer {
+	grid-area: footer;
+}
+.flex{
+	display: flex;
+}
+
+.flex-justify{
+	justify-content: flex-end;
+}
+.flex-center{
+	justify-content: center;
+}
+.flex-around{
+	justify-content: space-around;
+}
+/* uso de mediaquerie */
+
+/* vista mobile */
+@media only screen and (min-width: 0px) and (max-width: 768px){
+	/* SERVICIO */
+	.gridContainerPadreServicios {
+		display: grid;
+		grid-template-areas: 
+		"logo"
+		"nav"
+		"img"
+		"main"
+		"footer";
+		grid-template-columns: 100%;
+		grid-template-rows: 100px 150px 1fr 350px 200px;
+	}
+
+	header{
+		grid-area: logo;
+
+	}
+	nav {
+		grid-area: nav;
+	}
+	.img {
+		grid-area: img;
+	}
+	img{
+		width: 100%;
+		height: auto;
+	}
+	main {
+		grid-area: main;
+	}
+	.footerIndex{
+		grid-area: footer;
+		background-color: blue;
+	}
+	a{
+		text-decoration: none;
+		color: blue;
+
+	}
+	li{
+		list-style-type: none;
+		padding: 10px;
+	
+	}
+	.bg-yellow{
+		background-color: yellow;
+	}
+	p {
+		font-size: 30px;
+		color: red;
+	}
+	.border {
+	border: 1px dashed lightblue;
+	}
+
+
+	/* NOSOTROS */
+	body{
+		background-color: yellow;
+	}
+	.gridContainerPadreNosotros {
+		display: grid;
+		grid-template-areas: 
+		"logo"
+		"navIzq"
+		"navDer"
+		"img"
+		"titulo"
+		"txtIzq"
+		"txtDer"
+		"footer";
+		grid-template-columns: 100%;
+		grid-template-rows: 50px 100px 100px 150px 100px 300px 400px 250px;
+	}
+	header{
+		grid-area: logo;
+	}
+	.navIzq{
+		grid-area: navIzq;
+	}
+	.navDer{
+		grid-area: navDer;
+	}
+	.imgNosotros {
+		grid-area: img;
+	}
+	.titulo{
+		grid-area: titulo;
+	}
+	.txtIzq{
+		grid-area: txtIzq;
+	}
+	.txtDer{
+		grid-area: txtDer;
+	}
+	footer.footerNosotros{
+		grid-area: footer;
+	}
+	.navDer nav ul li a, .navIzq nav ul li a {
+		font-size: 40px;
+	}
+	.gridContainerPadreNosotros .titulo h1 {
+		text-align: center;
+	}
+}
+
+
+/* vista desktop */
+@media only screen and (min-width: 1024px) {
+	/* grid pagina servicios */
+
+	.gridContainerPadreServicios {
+		display: grid;
+		grid-template-areas: 
+		"logo nav nav nav"
+		"img img main main"
+		"footer footer footer footer";
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: 120px 1fr 350px;
+	}
+
+	header{
+		grid-area: logo;
+	}
+	nav {
+		grid-area: nav;
+	}
+	.img {
+		grid-area: img;
+	}
+	img{
+		width: 100%;
+		height: auto;
+	}
+	main {
+		grid-area: main;
+	}
+	.footerIndex{
+		grid-area: footer;
+	}
+	a{
+		text-decoration: none;
+		color: black;}
+	li{
+		list-style-type: none;
+		padding: 20px;
+		font-size: 20px;
+	}
+	.flex-justify{
+		justify-content: flex-end;
+	}
+	.flex-center{
+		justify-content: center;
+	}
+	.flex-around{
+		justify-content: space-around;
+	}
+	footer{
+		background-image:url(../assets/img/header3.jpg);
+		background-size: cover;
+	}
+	nav{
+		width: 100%;
+	}
+	p {
+		font-size: 50px;
+	}
+	.border {
+	border: 1px solid black;
+	}
+
+
+	/* NOSOTROS */
+	body{
+		background-color: lightblue;
+	}
+	.gridContainerPadreNosotros {
+		display: grid;
+		grid-template-areas: 
+		"navIzq navIzq logo logo navDer navDer"
+		"img img img img img img"
+		"titulo titulo titulo titulo titulo titulo"
+		"txtIzq txtIzq txtIzq txtDer txtDer txtDer"
+		"footer footer footer footer footer footer";
+	}
+	header{
+		grid-area: logo;
+	}
+	.navIzq{
+		grid-area: navIzq;
+	}
+	.navDer{
+		grid-area: navDer;
+	}
+	.imgNosotros {
+		grid-area: img;
+	}
+	.titulo{
+		grid-area: titulo;
+	}
+	.txtIzq{
+		grid-area: txtIzq;
+	}
+	.txtDer{
+		grid-area: txtDer;
+	}
+	footer.footerNosotros{
+		grid-area: footer;
+	}
+	.titulo {
+		padding: 30px 0;
+	}
+	.parrafoIzq, .parrafoDer {
+		text-align: justify;
+		font-size: 40px;
+		color: green;
+		padding: 0 40px;
+	}
+}
